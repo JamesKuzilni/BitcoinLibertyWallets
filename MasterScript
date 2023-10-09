@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+import os
+
+# Define the variables you want to replace in the files
+config_variables = {
+    "rpc_username": "rpc_username",
+    "rpc_password": "rpc_password",
+    "ip_address": "ip_address",
+    "database_username": "database_username",
+    "database_password": "database_password",
+    "user_website": "user_website",
+    "name_of_lightningnode": "name_of_lightning_node"
+}
+
+# Define the list of files to scan and update
+files_to_update = [
+    "~/LND",
+    "~/LND2",
+    "~/Samourai",
+    "~/BitcoinCore",
+    "~/Fulcrum",
+    "~/WhirlpoolCLI",
+    "~/BTCpayserver",
+    "~/BTCpayserverWebsite",
+    "~/DockerMempool",
+    "~/RideTheLightning"
+]
+
+# Expand the tilde (~) to the user's home directory
+files_to_update = [os.path.expanduser(file_path) for file_path in files_to_update]
+
+# Function to update the content of a file
+def update_file_content(file_path, replacements):
+    try:
+        with open(file_path, 'r') as file:
+            file_content = file.read()
+        
+        for old_value, new_value in replacements.items():
+            file_content = file_content.replace(old_value, new_value)
+        
+        with open(file_path, 'w') as file:
+            file.write(file_content)
+        
+        print(f"Updated {file_path}")
+    except Exception as e:
+        print(f"Error updating {file_path}: {str(e)}")
+
+# Update the content of each file with the defined variables
+for file_path in files_to_update:
+    update_file_content(file_path, config_variables)
