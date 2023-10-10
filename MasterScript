@@ -6,7 +6,7 @@ config_variables = {
     "rpc_username": "rpc_username",
     "rpc_password": "rpc_password",
     "ip_address": "ip_address",
-    "database_username": "database_username",
+    "BTCpayserver": "BTCpayserver",
     "database_password": "database_password",
     "user_website": "user_website",
     "name_of_lightningnode": "name_of_lightning_node"
