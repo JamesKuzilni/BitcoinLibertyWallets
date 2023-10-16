@@ -8,7 +8,7 @@ config_variables = {
     "ip_address": "ip_address",
     "BTCpayusername": "BTCpayusername",
     "BTCpaypassword": "BTCpaypassword",
-    "user_website": "user_website",
+    "yourwebsitedomain": "yourwebsitedomain",
     "name_of_lightningnode": "name_of_lightning_node"
 }
 
