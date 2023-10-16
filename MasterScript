@@ -48,3 +48,53 @@ def update_file_content(file_path, replacements):
 # Update the content of each file with the defined variables
 for file_path in files_to_update:
     update_file_content(file_path, config_variables)
+import os
+import fileinput
+import re
+
+# Define the file paths where the word "humble" should be replaced
+file_paths = [
+    "~/Applications",
+    "~/BTCpaylink",
+    "~/BTCpayserver",
+    "~/BTCpayserverWebsite",
+    "~/BitcoinCore",
+    "~/CommandCheatSheet",
+    "~/DockerMempool",
+    "~/Fulcrum",
+    "~/LND",
+    "~/LND2",
+    "~/LOOPBOLTZ",
+    "~/MiddleWare",
+    "~/RideTheLightning",
+    "~/Samourai",
+    "~/TorRefresh",
+    "~/WhirlpoolCLI",
+    "~/WhirlpoolGLI",
+]
+
+# Define the word to search for and the replacement word
+search_word = r"\bhumble\b"
+replacement_word = "your_defined_variable"
+
+# Define a function to replace the word in a file
+def replace_word_in_file(file_path):
+    with fileinput.FileInput(file_path, inplace=True) as f:
+        for line in f:
+            line = re.sub(search_word, replacement_word, line)
+            print(line, end="")
+
+# Iterate through the file paths and replace the word
+for file_path in file_paths:
+    # Expand the tilde (~) to the user's home directory
+    file_path = os.path.expanduser(file_path)
+
+    # Check if the file exists before attempting to replace
+    if os.path.isfile(file_path):
+        replace_word_in_file(file_path)
+        print(f"Processed file: {file_path}")
+    else:
+        print(f"File not found: {file_path}")
+
+# Print a message indicating that the word replacement is complete
+print("Word replacement completed.")
