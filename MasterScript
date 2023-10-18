@@ -9,7 +9,7 @@ config_variables = {
     "BTCpayusername": "BTCpayusername",
     "BTCpaypassword": "BTCpaypassword",
     "yourwebsitedomain": "yourwebsitedomain",
-    "name_of_lightningnode": "name_of_lightning_node"
+    "name_of_lightning_node": "name_of_lightning_node"
 }
 
 # Define the list of files to scan and update
