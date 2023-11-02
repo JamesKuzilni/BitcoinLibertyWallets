@@ -27,7 +27,8 @@ files_to_update = [
     "~/BTCpayserver",
     "~/BTCpayserverWebsite",
     "~/DockerMempool",
-    "~/RideTheLightning"
+    "~/RideTheLightning",
+    "~/Crontab",
 ]
 
 # Expand the tilde (~) to the user's home directory
@@ -72,6 +73,7 @@ file_paths = [
     "~/TorRefresh",
     "~/WhirlpoolCLI",
     "~/WhirlpoolGLI",
+    "~/Crontab",
 ]
 
 # Define the word to search for and the replacement word
